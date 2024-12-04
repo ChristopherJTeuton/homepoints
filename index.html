@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben's Home Points</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="fire">Ben's Home Points</div>
+        <div class="date-time">
+            <span id="currentDate"></span>
+            <span id="currentTime"></span>
+        </div>
+        <img src="benpoints.png" alt="Ben's Points Image" class="ben-image">
+        <div class="points-display">
+            <div class="points-box">
+                <h2>Total Points</h2>
+                <p id="totalPoints">0</p>
+            </div>
+            <div class="points-box">
+                <h2>Today's Points</h2>
+                <p id="todaysPoints">0</p>
+            </div>
+            <div class="points-box">
+                <h2>This Week's Points</h2>
+                <p id="weeklyPoints">0</p>
+            </div>
+        </div>
+        <div class="points-grid">
+            <button onclick="handleButtonClick(event, 'Helping Mom', '👩‍👦')" aria-label="Helping Mom">Helping Mom 👩‍👦</button>
+            <button onclick="handleButtonClick(event, 'Helping Dad', '👨‍👦')" aria-label="Helping Dad">Helping Dad 👨‍👦</button>
+            <button onclick="handleButtonClick(event, 'Helping Aela', '👩‍👧')" aria-label="Helping Aela">Helping Aela 👩‍👧</button>
+            <button onclick="handleButtonClick(event, 'Helping Evelyn', '👩‍👧')" aria-label="Helping Evelyn">Helping Evelyn 👩‍👧</button>
+            <button onclick="handleButtonClick(event, 'Making the Bed', '🛌️')" aria-label="Making the Bed">Making the Bed 🛌️</button>
+            <button onclick="handleButtonClick(event, 'Reading', '📖')" aria-label="Reading">Reading 📖</button>
+            <button onclick="handleButtonClick(event, 'Family Time', '👨‍👩‍👦')" aria-label="Family Time">Family Time 👨‍👩‍👦</button>
+            <button onclick="handleButtonClick(event, 'Brush Teeth', '🦷')" aria-label="Brush Teeth">Brush Teeth 🦷</button>
+            <button onclick="handleButtonClick(event, 'Good At School', '🏫')" aria-label="Good At School">Good At School 🏫</button>
+            <button onclick="handleButtonClick(event, 'Being Patient', '⏳')" aria-label="Being Patient">Being Patient ⏳</button>
+            <button onclick="handleButtonClick(event, 'Listening', '👂')" aria-label="Listening">Listening 👂</button>
+            <button onclick="handleButtonClick(event, 'Good Meal', '🍽️')" aria-label="Good Meal">Good Meal 🍽️</button>
+            <button onclick="handleButtonClick(event, 'Cleaning', '🧹')" aria-label="Cleaning">Cleaning 🧹</button>
+            <button onclick="handleButtonClick(event, 'Learning Time', '📚')" aria-label="Learning Time">Learning Time 📚</button>
+            <button onclick="handleButtonClick(event, 'Quiet Time', '😌')" aria-label="Quiet Time">Quiet Time 😌</button>
+            <button onclick="handleButtonClick(event, 'Exercising', '🏃')" aria-label="Exercising">Exercising 🏃</button>
+            <button onclick="handleButtonClick(event, 'Homework', '📝')" aria-label="Homework">Homework 📝</button>
+            <button onclick="handleButtonClick(event, 'Outside Time', '🌳')" aria-label="Outside Time">Outside Time 🌳</button>
+            <button onclick="handleButtonClick(event, 'Bath Time', '🛁')" aria-label="Bath Time">Bath Time 🛁</button>
+            <button onclick="handleButtonClick(event, 'Tell the Truth', '😇')" aria-label="Tell the Truth">Tell the Truth 😇</button>
+            <button onclick="handleButtonClick(event, 'Fold Laundry', '🧺')" aria-label="Fold Laundry">Fold Laundry 🧺</button>
+            <button onclick="handleButtonClick(event, 'Set the Table', '🍽️')" aria-label="Set the Table">Set the Table 🍽️</button>
+            <button onclick="handleButtonClick(event, 'Feed Dogs', '🐾')" aria-label="Feed Dogs">Feed Dogs 🐾</button>
+            <button onclick="handleButtonClick(event, 'Wash Dishes', '🍴')" aria-label="Wash Dishes">Wash Dishes 🍴</button>
+            <button onclick="handleButtonClick(event, 'Put Up Groceries', '🛍️')" aria-label="Put Up Groceries">Put Up Groceries 🛍️</button>
+            <button onclick="handleButtonClick(event, 'Help Cook', '🍳')" aria-label="Help Cook">Help Cook 🍳</button>
+            <button onclick="handleButtonClick(event, 'Sharing', '🧸🤝')" aria-label="Sharing">Sharing 🧸🤝</button>
+            <button onclick="handleButtonClick(event, 'Slept in Bed', '😌')" aria-label="Slept in Bed">Slept in Bed 😌</button>
+        </div>
+        <button id="pointHistoryButton" class="history-button">Point History</button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="pointHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-header">
+                <h2>Point History</h2>
+            </div>
+            <div class="modal-body">
+                <div class="history-column">
+                    <h3>Today's Points</h3>
+                    <div id="todaysHistory" class="history-list"></div>
+                </div>
+                <div class="history-column">
+                    <h3>This Week's Points</h3>
+                    <div id="weeklyHistory" class="history-list"></div>
+                </div>
+                <div class="history-column">
+                    <h3>Total Points</h3>
+                    <div id="totalHistory" class="history-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fireworks Animation Container -->
+    <div id="fireworksContainer" class="fireworks-container"></div>
+
+    <!-- Preload Fireworks Animation -->
+    <link rel="preload" href="fireworks.gif" as="image">
+
+    <script src="script.js"></script>
+</body>
+</html>
